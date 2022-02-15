@@ -1,6 +1,7 @@
 // import { useEffect, useState } from "react";
 // import { getSession } from "next-auth/client";
 import ProfileForm from "./profile-form";
+import SEO from "../seo/index";
 import classes from "./user-profile.module.css";
 
 function UserProfile() {
@@ -36,6 +37,7 @@ function UserProfile() {
 
   return (
     <section className={classes.profile}>
+      <SEO title="User Profile" />
       <h1>Your User Profile</h1>
       <ProfileForm onChangePassword={changePasswordHandler} />
     </section>

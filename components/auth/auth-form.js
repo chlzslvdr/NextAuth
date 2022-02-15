@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { signIn } from "next-auth/client";
 import { useRouter } from "next/router";
+import SEO from "../seo/index";
 import classes from "./auth-form.module.css";
 
 async function createUser(email, password) {
@@ -64,6 +65,7 @@ function AuthForm() {
   }
   return (
     <section className={classes.auth}>
+      <SEO title={isLogin ? "Login" : "Sign Up"} />
       <h1>{isLogin ? "Login" : "Sign Up"}</h1>
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
